@@ -123,9 +123,16 @@ public class PlayerDude : MonoBehaviour
 	{
 		var body = hit.collider.attachedRigidbody;
 		// no rigidbody
-		if (body == null || body.isKinematic)
+		if (body == null)
 			return;
-		
+
+		// colliding with something kinematic that we want to fall apart
+		if(body.isKinematic)
+		{
+			body.isKinematic = false;
+			body.useGravity = true;
+		}
+
 		// We dont want to push objects below us
 		if (hit.moveDirection.y < -0.3f) 
 			return;
