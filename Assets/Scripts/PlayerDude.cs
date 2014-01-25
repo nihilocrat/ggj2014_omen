@@ -14,6 +14,7 @@ public class PlayerDude : MonoBehaviour
 	private CharacterController controller;
 
 	private int firstLevelIndex = 2;
+	private float deathAltitude = -10f;
 
 	void Awake()
 	{
@@ -75,18 +76,24 @@ public class PlayerDude : MonoBehaviour
 	{
 		// charactercontroller workaround
 		controller.Move(Vector3.up * 0.001f);
+
+		if(transform.position.y <= deathAltitude)
+		{
+			SendMessage("OnPlayerDeath", gameObject);
+		}
 	}
 
 	IEnumerator OnPlayerDeath(GameObject killer)
 	{
 		if(dead)
 		{
-			yield return null;
+			yield break;
 		}
+		dead = true;
 
 		if(killer != null)
 		{
-			killer.SendMessage("OnKilledPlayer");
+			killer.SendMessage("OnKilledPlayer", SendMessageOptions.DontRequireReceiver);
 		}
 		/*
 		transform.position = lastCheckPoint.position;
@@ -96,7 +103,7 @@ public class PlayerDude : MonoBehaviour
 		var index = Random.Range(0, deathSounds.Length);
 		audio.PlayOneShot(deathSounds[index]);
 
-		controller.enabled = false;
+		OnDisable();
 
 		var tilt = 1f;
 		if(Random.value > 0.5f)
@@ -116,10 +123,10 @@ public class PlayerDude : MonoBehaviour
 	{
 		if(dead)
 		{
-			yield return null;
+			yield break;
 		}
 
-		controller.enabled = false;
+		OnDisable();
 		dead = true; // technically not dead, but this prevents a lot of stuff bad stuff from happening
 
 		fx.SendMessage("OnLevelEndFX", 2f);
