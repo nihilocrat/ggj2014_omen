@@ -7,6 +7,7 @@ public class PlayerDude : MonoBehaviour
 	public Transform lastCheckPoint;
 	public Transform grabLocation;
 	public Transform holdLocation;
+	public AudioClip[] deathSounds;
 
 	private bool dead = false;
 	private FullScreenFX fx;
@@ -89,6 +90,9 @@ public class PlayerDude : MonoBehaviour
 		transform.position = lastCheckPoint.position;
 		transform.rotation = lastCheckPoint.rotation;
 		*/
+
+		var index = Random.Range(0, deathSounds.Length);
+		audio.PlayOneShot(deathSounds[index]);
 
 		controller.enabled = false;
 

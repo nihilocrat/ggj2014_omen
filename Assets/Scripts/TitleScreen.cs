@@ -27,7 +27,7 @@ public class TitleScreen : MonoBehaviour
 
 	IEnumerator doNextLevel()
 	{
-		fx.SendMessage("OnLevelEndFX", 2f);
+		fx.SendMessage("OnTitleEndFX", 2f);
 		yield return new WaitForSeconds(2f);
 
 		Application.LoadLevel(Application.loadedLevel + 1);

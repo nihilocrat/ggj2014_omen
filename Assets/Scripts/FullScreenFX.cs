@@ -49,8 +49,8 @@ public class FullScreenFX : MonoBehaviour
 
 		yield return new WaitForSeconds(time);
 		
-		fx.renderer.material.color = originalColor;
-		fx.gameObject.SetActive(false);
+		//fx.renderer.material.color = originalColor;
+		//fx.gameObject.SetActive(false);
 	}
 
 	IEnumerator doFadeOut(Transform fx, float time)
