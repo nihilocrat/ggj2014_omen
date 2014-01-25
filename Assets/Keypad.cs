@@ -44,7 +44,7 @@ public class Keypad : MonoBehaviour
 
 		if(isGod)
 		{
-			GUI.Label(new Rect(origin.x, origin.y + 40f, size.x, 20f), "THE CORRECT CODE IS:    " + targetCode);
+			GUI.Label(new Rect(origin.x, origin.y + 40f, size.x / 2, 20f), "THE CORRECT CODE IS:    " + targetCode);
 		}
 		else
 		{
@@ -88,12 +88,18 @@ public class Keypad : MonoBehaviour
 			}
 			else
 			{
-				currentCode = GUI.TextField(new Rect(origin.x, origin.y + 40f, size.x, 20f), currentCode, 40);
+				currentCode = GUI.TextField(new Rect(origin.x, origin.y + 40f, size.x/2, 20f), currentCode, 40);
 				
 				if(GUI.Button(new Rect(origin.x, origin.y + 80f, buttonsize.x, buttonsize.y), "ENTER")
 				   || Input.GetKeyDown(KeyCode.Return))
 				{
 					ValidateCode();
+				}
+				
+				if(GUI.Button(new Rect(origin.x + buttonsize.x, origin.y + 80f, buttonsize.x, buttonsize.y), "X"))
+				{
+					currentCode = "";
+					CloseKeypad();
 				}
 			}
 		}
