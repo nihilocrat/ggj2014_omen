@@ -3,10 +3,19 @@ using System.Collections;
 
 public class TitleScreen : MonoBehaviour
 {
+	public float startDelay = 2.0f;
+
+	private float startTime = 0f;
+
+	void Start()
+	{
+		startTime = Time.time;
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
-		if(Input.GetButtonDown("Action"))
+		if(Time.time > startTime + startDelay && Input.GetButtonDown("Action"))
 		{
 			StartCoroutine( doNextLevel() );
 		}

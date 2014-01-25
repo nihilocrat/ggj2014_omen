@@ -8,7 +8,16 @@ public class PlayerDude : MonoBehaviour
 	public Transform grabLocation;
 	public Transform holdLocation;
 
-	void Start ()
+	private bool dead = false;
+	private FullScreenFX fx;
+
+	void Awake()
+	{
+		fx = GameObject.FindObjectOfType<FullScreenFX>();
+		fx.SendMessage("OnBeginGameFX", 2f);
+	}
+
+	void Start()
 	{
 		if(lastCheckPoint == null)
 		{
@@ -16,7 +25,8 @@ public class PlayerDude : MonoBehaviour
 		}
 
 		// send me to the spawnpoint
-		OnPlayerDeath(null);
+		transform.position = lastCheckPoint.position;
+		transform.rotation = lastCheckPoint.rotation;
 	}
 
 	void Update ()
@@ -46,19 +56,45 @@ public class PlayerDude : MonoBehaviour
 		}
 	}
 
-	void OnPlayerDeath(GameObject killer)
+	IEnumerator OnPlayerDeath(GameObject killer)
 	{
+		if(dead)
+		{
+			yield return null;
+		}
+
 		if(killer != null)
 		{
 			killer.SendMessage("OnKilledPlayer");
 		}
-
+		/*
 		transform.position = lastCheckPoint.position;
 		transform.rotation = lastCheckPoint.rotation;
+		*/
+
+		GetComponent<CharacterController>().enabled = false;
+
+		var tilt = 1f;
+		if(Random.value > 0.5f)
+		{
+			tilt *= -1f;
+		}
+
+		iTween.RotateAdd(gameObject, new Vector3(0f, 0f, 100f * tilt), 1f);
+
+		fx.SendMessage("OnPlayerDeathFX", 1f);
+		yield return new WaitForSeconds(1f);
+
+		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	void OnPlayerWin(string nextLevelName)
 	{
+		if(dead)
+		{
+			return;
+		}
+
 		if(string.IsNullOrEmpty(nextLevelName))
 		{
 			Application.LoadLevel(Application.loadedLevel + 1);
@@ -67,6 +103,11 @@ public class PlayerDude : MonoBehaviour
 
 	void OnGrabSuccess(GameObject grabbed)
 	{
+		if(dead)
+		{
+			return;
+		}
+
 		grabbed.transform.parent = holdLocation;
 
 		grabbed.transform.localPosition = Vector3.zero;
