@@ -1,45 +1,13 @@
 fileFormatVersion: 2
-guid: c9c69bbe4117c435da33f76506e21189
+guid: 61a24716782f04306a83dc652a6c222b
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Default_Ground
-    100002: Default_Walls
-    100004: EndText
-    100006: God_Hole
-    100008: Human_HoleCap
-    100010: //RootNode
-    100012: Human_HoleCap001
-    100014: Robot2
-    400000: Default_Ground
-    400002: Default_Walls
-    400004: EndText
-    400006: God_Hole
-    400008: Human_HoleCap
-    400010: //RootNode
-    400012: Human_HoleCap001
-    400014: Robot2
-    2300000: Default_Ground
-    2300002: Default_Walls
-    2300004: EndText
-    2300006: God_Hole
-    2300008: Human_HoleCap
-    2300010: Human_HoleCap001
-    2300012: Robot2
-    3300000: Default_Ground
-    3300002: Default_Walls
-    3300004: EndText
-    3300006: God_Hole
-    3300008: Human_HoleCap
-    3300010: Human_HoleCap001
-    3300012: Robot2
-    4300000: Default_Ground
-    4300002: Default_Walls
-    4300004: Human_HoleCap
-    4300006: EndText
-    4300008: God_Hole
-    4300010: Human_HoleCap001
-    4300012: Robot2
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: OrangeCone
     9500000: //RootNode
   materials:
     importMaterials: 1
