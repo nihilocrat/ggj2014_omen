@@ -55,6 +55,8 @@ public class PlayerDude : MonoBehaviour
 			if(holdLocation.childCount > 0)
 			{
 				var dropMe = holdLocation.GetChild(0);
+				var dropGrabbable = dropMe.GetComponent<Grabbable>();
+				dropGrabbable.enabled = true;
 				dropMe.parent = null;
 
 				dropMe.rigidbody.useGravity = true;
@@ -155,7 +157,7 @@ public class PlayerDude : MonoBehaviour
 			return;
 
 		// colliding with something kinematic that we want to fall apart
-		if(body.isKinematic)
+		if(hit.gameObject.CompareTag("Destructible") && body.isKinematic)
 		{
 			body.isKinematic = false;
 			body.useGravity = true;
