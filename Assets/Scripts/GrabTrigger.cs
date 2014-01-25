@@ -12,6 +12,6 @@ public class GrabTrigger : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		other.gameObject.SendMessage("OnGrabbed", other.gameObject);
+		other.gameObject.SendMessage("OnGrabbed", owner, SendMessageOptions.DontRequireReceiver);
 	}
 }
