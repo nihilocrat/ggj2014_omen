@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PlayerDude : MonoBehaviour
 {
+	public GameObject grabTriggerPrefab;
 	public Transform lastCheckPoint;
+	public Transform grabLocation;
 
 	void Start ()
 	{
@@ -21,6 +23,21 @@ public class PlayerDude : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
 			Application.Quit();
+		}
+
+		if(Input.GetButtonDown("Action"))
+		{
+			// if I have grabbed something, drop it.
+			if(grabLocation.childCount > 0)
+			{
+				var dropMe = grabLocation.GetChild(0);
+			}
+			// if not, try grabbing something.
+			else
+			{
+				var obj = Instantiate(grabTriggerPrefab, grabLocation.position, grabLocation.rotation) as GameObject;
+				obj.GetComponent<GrabTrigger>().owner = gameObject;
+			}
 		}
 	}
 
@@ -41,5 +58,13 @@ public class PlayerDude : MonoBehaviour
 		{
 			Application.LoadLevel(Application.loadedLevel + 1);
 		}
+	}
+
+	void OnGrabSuccess(GameObject grabbed)
+	{
+		grabbed.transform.parent = grabLocation;
+
+		grabbed.transform.localPosition = Vector3.zero;
+		grabbed.transform.localRotation = Quaternion.identity;
 	}
 }
