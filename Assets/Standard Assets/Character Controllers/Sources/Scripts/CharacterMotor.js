@@ -225,6 +225,11 @@ private function UpdateFunction () {
 	movingPlatform.hitPlatform = null;
 	groundNormal = Vector3.zero;
 	
+	if(!controller.enabled)
+	{
+		return;
+	}
+	
    	// Move our character!
 	movement.collisionFlags = controller.Move (currentMovementOffset);
 	

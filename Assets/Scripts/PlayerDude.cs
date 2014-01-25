@@ -13,7 +13,7 @@ public class PlayerDude : MonoBehaviour
 	private FullScreenFX fx;
 	private CharacterController controller;
 
-	private int firstLevelIndex = 2;
+	private string firstLevelName = "level1";
 	private float deathAltitude = -10f;
 
 	void Awake()
@@ -21,7 +21,7 @@ public class PlayerDude : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 
 		fx = GameObject.FindObjectOfType<FullScreenFX>();
-		if(Application.loadedLevel <= firstLevelIndex)
+		if(Application.loadedLevelName == firstLevelName)
 		{
 			fx.SendMessage("OnGameBeginFX", 2f);
 		}
@@ -75,7 +75,10 @@ public class PlayerDude : MonoBehaviour
 	void FixedUpdate()
 	{
 		// charactercontroller workaround
-		controller.Move(Vector3.up * 0.001f);
+		if(controller.enabled)
+		{
+			controller.Move(Vector3.up * 0.001f);
+		}
 
 		if(transform.position.y <= deathAltitude)
 		{
@@ -126,6 +129,8 @@ public class PlayerDude : MonoBehaviour
 			yield break;
 		}
 
+		Debug.Log("Player won! Next level: " + nextLevelName);
+
 		OnDisable();
 		dead = true; // technically not dead, but this prevents a lot of stuff bad stuff from happening
 
@@ -135,6 +140,10 @@ public class PlayerDude : MonoBehaviour
 		if(string.IsNullOrEmpty(nextLevelName))
 		{
 			Application.LoadLevel(Application.loadedLevel + 1);
+		}
+		else
+		{
+			Application.LoadLevel(nextLevelName);
 		}
 	}
 
