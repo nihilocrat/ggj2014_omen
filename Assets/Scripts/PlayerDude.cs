@@ -10,11 +10,23 @@ public class PlayerDude : MonoBehaviour
 
 	private bool dead = false;
 	private FullScreenFX fx;
+	private CharacterController controller;
+
+	private int firstLevelIndex = 2;
 
 	void Awake()
 	{
+		controller = GetComponent<CharacterController>();
+
 		fx = GameObject.FindObjectOfType<FullScreenFX>();
-		fx.SendMessage("OnBeginGameFX", 2f);
+		if(Application.loadedLevel <= firstLevelIndex)
+		{
+			fx.SendMessage("OnGameBeginFX", 2f);
+		}
+		else
+		{
+			fx.SendMessage("OnLevelBeginFX", 2f);
+		}
 	}
 
 	void Start()
@@ -56,6 +68,12 @@ public class PlayerDude : MonoBehaviour
 		}
 	}
 
+	void FixedUpdate()
+	{
+		// charactercontroller workaround
+		controller.Move(Vector3.up * 0.001f);
+	}
+
 	IEnumerator OnPlayerDeath(GameObject killer)
 	{
 		if(dead)
@@ -72,7 +90,7 @@ public class PlayerDude : MonoBehaviour
 		transform.rotation = lastCheckPoint.rotation;
 		*/
 
-		GetComponent<CharacterController>().enabled = false;
+		controller.enabled = false;
 
 		var tilt = 1f;
 		if(Random.value > 0.5f)
@@ -88,12 +106,18 @@ public class PlayerDude : MonoBehaviour
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
-	void OnPlayerWin(string nextLevelName)
+	IEnumerator OnPlayerWin(string nextLevelName)
 	{
 		if(dead)
 		{
-			return;
+			yield return null;
 		}
+
+		controller.enabled = false;
+		dead = true; // technically not dead, but this prevents a lot of stuff bad stuff from happening
+
+		fx.SendMessage("OnLevelEndFX", 2f);
+		yield return new WaitForSeconds(2f);
 
 		if(string.IsNullOrEmpty(nextLevelName))
 		{

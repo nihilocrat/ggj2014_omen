@@ -12,9 +12,29 @@ public class FullScreenFX : MonoBehaviour
 		StartCoroutine( doFadeIn(death, time) );
 	}
 	
-	void OnBeginGameFX(float time)
+	void OnGameBeginFX(float time)
 	{
 		StartCoroutine( doFadeOut(transition, time) );
+	}
+	
+	void OnLevelBeginFX(float time)
+	{
+		StartCoroutine( doFadeOut(win, time) );
+	}
+
+	void OnLevelEndFX(float time)
+	{
+		StartCoroutine( doFadeIn(win, time) );
+	}
+
+	void OnTitleBeginFX(float time)
+	{
+		StartCoroutine( doFadeOut(transition, time) );
+	}
+
+	void OnTitleEndFX(float time)
+	{
+		StartCoroutine( doFadeIn(transition, time) );
 	}
 
 	IEnumerator doFadeIn(Transform fx, float time)
@@ -35,9 +55,12 @@ public class FullScreenFX : MonoBehaviour
 
 	IEnumerator doFadeOut(Transform fx, float time)
 	{
-		Color originalColor = fx.renderer.material.color;
+		Color originalColor = fx.renderer.sharedMaterial.color;
+		Color startColor = originalColor;
+		startColor.a = 1f;
 
 		fx.gameObject.SetActive(true);
+		fx.renderer.material.color = startColor;
 		iTween.FadeTo(fx.gameObject, 0f, time);
 
 		yield return new WaitForSeconds(time);
