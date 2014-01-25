@@ -176,4 +176,20 @@ public class PlayerDude : MonoBehaviour
 		// Apply the push
 		body.velocity = pushDir * pushPower;
 	}
+
+	void OnDisable()
+	{
+		controller.enabled = false;
+
+		GetComponent<MouseLook>().enabled = false;
+		transform.Find("CameraHolder").GetComponent<MouseLook>().enabled = false;
+	}
+
+	void OnEnable()
+	{
+		controller.enabled = true;
+		
+		GetComponent<MouseLook>().enabled = true;
+		transform.Find("CameraHolder").GetComponent<MouseLook>().enabled = true;
+	}
 }

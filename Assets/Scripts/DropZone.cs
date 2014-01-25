@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(SignalSender))]
 public class DropZone : MonoBehaviour
 {
 	void OnTriggerEnter(Collider other)
@@ -16,5 +17,6 @@ public class DropZone : MonoBehaviour
 	{
 		// do stuff?!?!?
 		Debug.Log("dropped " + item.name + " in dropzone : " + gameObject.name);
+		GetComponent<SignalSender>().Send();
 	}
 }
