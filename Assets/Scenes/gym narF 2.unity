@@ -224,7 +224,7 @@ GameObject:
   - 65: {fileID: 139944298}
   - 23: {fileID: 139944297}
   m_Layer: 8
-  m_Name: Cube red
+  m_Name: Cube fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,7 +499,7 @@ GameObject:
   - 33: {fileID: 237171194}
   - 23: {fileID: 237171193}
   m_Layer: 9
-  m_Name: FX_transition
+  m_Name: FX_win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +529,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 671a0993e43ef094d85d25336e7b3457, type: 2}
+  - {fileID: 2100000, guid: 5674baa96a010834bba03e2256e28062, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -696,7 +696,7 @@ GameObject:
   - 65: {fileID: 325348460}
   - 23: {fileID: 325348459}
   m_Layer: 10
-  m_Name: Fake Wall
+  m_Name: Wall fake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1598b0e9c0f0848a805ba94fc7bafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 237171192}
+  transition: {fileID: 1629848900}
   death: {fileID: 1497917872}
   win: {fileID: 237171192}
 --- !u!124 &444437905
@@ -903,6 +903,7 @@ Transform:
   m_Children:
   - {fileID: 1497917872}
   - {fileID: 1837038718}
+  - {fileID: 1629848900}
   - {fileID: 237171192}
   - {fileID: 458867573}
   - {fileID: 1951008109}
@@ -919,7 +920,7 @@ GameObject:
   - 65: {fileID: 453317221}
   - 23: {fileID: 453317220}
   m_Layer: 8
-  m_Name: Cube red
+  m_Name: Cube fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,7 +1001,7 @@ Transform:
   m_PrefabInternal: {fileID: 2110251664}
   m_GameObject: {fileID: 458867572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: .5, z: 1}
+  m_LocalPosition: {x: 1.39999998, y: .600000024, z: 1}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 444437908}
@@ -1012,7 +1013,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 2110251664}
   m_GameObject: {fileID: 458867572}
-  m_Text: "Help the other player avoid danger!\r\nBlue things will kill them!"
+  m_Text: Help the other player avoid danger!
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1232,7 +1233,7 @@ GameObject:
   - 65: {fileID: 541189133}
   - 23: {fileID: 541189132}
   m_Layer: 8
-  m_Name: Cube red
+  m_Name: Cube fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3360,6 +3361,64 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1629848899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 96bf93cc4081e8e49ae9758f41b6c037, type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1629848900}
+  - 33: {fileID: 1629848902}
+  - 23: {fileID: 1629848901}
+  m_Layer: 9
+  m_Name: FX_transition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1629848900
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 96bf93cc4081e8e49ae9758f41b6c037, type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 1629848899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444437908}
+--- !u!23 &1629848901
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300008, guid: 96bf93cc4081e8e49ae9758f41b6c037,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 1629848899}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 671a0993e43ef094d85d25336e7b3457, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1629848902
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300006, guid: 96bf93cc4081e8e49ae9758f41b6c037,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 1629848899}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1710548096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,7 +3846,7 @@ Transform:
   m_PrefabInternal: {fileID: 2110251664}
   m_GameObject: {fileID: 1837038717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 2}
   m_LocalScale: {x: .25, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 444437908}
@@ -4034,7 +4093,7 @@ GameObject:
   - 65: {fileID: 1959844025}
   - 23: {fileID: 1959844024}
   m_Layer: 8
-  m_Name: Cube red
+  m_Name: Cube fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
