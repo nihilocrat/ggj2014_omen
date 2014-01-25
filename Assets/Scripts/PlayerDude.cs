@@ -6,6 +6,7 @@ public class PlayerDude : MonoBehaviour
 	public GameObject grabTriggerPrefab;
 	public Transform lastCheckPoint;
 	public Transform grabLocation;
+	public Transform holdLocation;
 
 	void Start ()
 	{
@@ -28,9 +29,13 @@ public class PlayerDude : MonoBehaviour
 		if(Input.GetButtonDown("Action"))
 		{
 			// if I have grabbed something, drop it.
-			if(grabLocation.childCount > 0)
+			if(holdLocation.childCount > 0)
 			{
-				var dropMe = grabLocation.GetChild(0);
+				var dropMe = holdLocation.GetChild(0);
+				dropMe.parent = null;
+
+				dropMe.rigidbody.useGravity = true;
+				dropMe.rigidbody.isKinematic = false;
 			}
 			// if not, try grabbing something.
 			else
@@ -62,9 +67,12 @@ public class PlayerDude : MonoBehaviour
 
 	void OnGrabSuccess(GameObject grabbed)
 	{
-		grabbed.transform.parent = grabLocation;
+		grabbed.transform.parent = holdLocation;
 
 		grabbed.transform.localPosition = Vector3.zero;
 		grabbed.transform.localRotation = Quaternion.identity;
+		
+		grabbed.rigidbody.useGravity = false;
+		grabbed.rigidbody.isKinematic = true;
 	}
 }
