@@ -69,6 +69,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 54: {fileID: 5400000}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: HumanPlayer
   m_TagString: Player
@@ -509,6 +510,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3009451617b7aca4685196c439513df5, type: 3}
   - {fileID: 8300000, guid: 536bfff5cb27ed940b4fcb3adf772e24, type: 3}
   - {fileID: 8300000, guid: 76e073c7e6ed1fe4ba5327ebc9f69613, type: 3}
+  dead: 0
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -521,6 +523,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doMirror: 1
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee266d44d1330cb4fa5ded24ff66030f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: .5
+  velocityThreshhold: 1
+  footstepSound: {fileID: 8300000, guid: def3428d4a904ca4daa26a48e269af15, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

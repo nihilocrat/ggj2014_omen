@@ -8,8 +8,8 @@ public class PlayerDude : MonoBehaviour
 	public Transform grabLocation;
 	public Transform holdLocation;
 	public AudioClip[] deathSounds;
+	public bool dead = false;
 
-	private bool dead = false;
 	private FullScreenFX fx;
 	private CharacterController controller;
 

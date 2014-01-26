@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Keypad : MonoBehaviour
-{	
+{
 	public bool numericInput = true;
 	public string[] possiblePasswords;
 	
@@ -35,17 +35,22 @@ public class Keypad : MonoBehaviour
 
 	void DrawKeyPad(Vector2 origin, bool isGod)
 	{
+		GUIStyle style = new GUIStyle(GUI.skin.box);
+		//style.font = font;
+		//GUI.color = Color.white;
+		style.fontSize *= 2;
+
 		//Vector2 origin = new Vector2(100f, 100f);
 		Vector2 size = new Vector2(400f, 500f);
 		Vector2 buttonsize = new Vector2(100f, 100f);
 		float textHeight = 24f;
-		GUI.Box(new Rect(origin.x - 50f, origin.y - 50f, size.x, size.y), "ENTER ACCESS CODE");
+		GUI.Box(new Rect(origin.x - 50f, origin.y - 50f, size.x, size.y), "ENTER ACCESS CODE");//, style);
 		
-		GUI.Label(new Rect(origin.x + (size.x/3), origin.y - 30f, size.x, textHeight), currentCode);
+		GUI.Label(new Rect(origin.x + (size.x/3), origin.y - 30f, size.x, textHeight), currentCode);//, style);
 
 		if(isGod)
 		{
-			GUI.Label(new Rect(origin.x, origin.y + 40f, size.x, textHeight), "THE CORRECT CODE IS:    " + targetCode);
+			GUI.Label(new Rect(origin.x, origin.y + 40f, size.x, textHeight), "THE CORRECT CODE IS:    " + targetCode);//, style);
 		}
 		else
 		{
@@ -89,10 +94,18 @@ public class Keypad : MonoBehaviour
 			}
 			else
 			{
-				currentCode = GUI.TextField(new Rect(origin.x, origin.y + 40f, size.x/2, textHeight), currentCode, 40);
-				
+				Event e = Event.current;
+
+				GUI.SetNextControlName("KeypadInput");
+				currentCode = GUI.TextField(new Rect(origin.x, origin.y + 40f, size.x/2, textHeight), currentCode, 40);//, style);
+
+				if (GUI.GetNameOfFocusedControl() == string.Empty)
+				{
+					GUI.FocusControl("KeypadInput");
+				}
+
 				if(GUI.Button(new Rect(origin.x, origin.y + 80f, buttonsize.x, buttonsize.y), "ENTER")
-				   || Input.GetKeyDown(KeyCode.Return))
+				   || e.keyCode == KeyCode.Return || Input.GetKeyDown(KeyCode.Return))
 				{
 					ValidateCode();
 				}
@@ -158,7 +171,7 @@ public class Keypad : MonoBehaviour
 		else
 		{
 			Debug.Log("KEYPAD: failure!");
-			currentCode = "INVALID CODE! >:(";
+			currentCode = "INVALID! >:(";
 		}
 	}
 

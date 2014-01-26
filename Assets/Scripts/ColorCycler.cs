@@ -44,13 +44,6 @@ public class ColorCycler : MonoBehaviour
 				index = 0;
 			}
 		}
-		/*
-		Color newColor = new Color(
-			Mathf.Lerp(beginColor.r, endColor.r, t),
-			Mathf.Lerp(beginColor.g, endColor.g, t),
-			Mathf.Lerp(beginColor.b, endColor.b, t),
-			1.0f);
-		*/
 
 		var beginColor = colors[index];
 		var endColor = colors[nextIndex];
