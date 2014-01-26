@@ -7,10 +7,13 @@ public class Timer : MonoBehaviour
 	public TextMesh timerText;
 
 	private float time = 0f;
+	private float levelBeginTime = 0f;
 
 	// Use this for initialization
 	void Start ()
 	{
+		levelBeginTime = Time.time;
+
 		if(player == null)
 		{
 			player = FindObjectOfType<PlayerDude>();
@@ -22,7 +25,7 @@ public class Timer : MonoBehaviour
 	{
 		if(!player.dead)
 		{
-			time = Time.time;
+			time = Time.time - levelBeginTime;
 		}
 
 		timerText.text = TimeToString(time);
