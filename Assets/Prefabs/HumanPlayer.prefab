@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed0179d562f2854eae16b19e4baee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doMirror: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

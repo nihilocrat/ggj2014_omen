@@ -38,13 +38,14 @@ public class Keypad : MonoBehaviour
 		//Vector2 origin = new Vector2(100f, 100f);
 		Vector2 size = new Vector2(400f, 500f);
 		Vector2 buttonsize = new Vector2(100f, 100f);
+		float textHeight = 24f;
 		GUI.Box(new Rect(origin.x - 50f, origin.y - 50f, size.x, size.y), "ENTER ACCESS CODE");
 		
-		GUI.Label(new Rect(origin.x + (size.x/3), origin.y - 30f, size.x, 20f), currentCode);
+		GUI.Label(new Rect(origin.x + (size.x/3), origin.y - 30f, size.x, textHeight), currentCode);
 
 		if(isGod)
 		{
-			GUI.Label(new Rect(origin.x, origin.y + 40f, size.x / 2, 20f), "THE CORRECT CODE IS:    " + targetCode);
+			GUI.Label(new Rect(origin.x, origin.y + 40f, size.x, textHeight), "THE CORRECT CODE IS:    " + targetCode);
 		}
 		else
 		{
@@ -88,7 +89,7 @@ public class Keypad : MonoBehaviour
 			}
 			else
 			{
-				currentCode = GUI.TextField(new Rect(origin.x, origin.y + 40f, size.x/2, 20f), currentCode, 40);
+				currentCode = GUI.TextField(new Rect(origin.x, origin.y + 40f, size.x/2, textHeight), currentCode, 40);
 				
 				if(GUI.Button(new Rect(origin.x, origin.y + 80f, buttonsize.x, buttonsize.y), "ENTER")
 				   || Input.GetKeyDown(KeyCode.Return))

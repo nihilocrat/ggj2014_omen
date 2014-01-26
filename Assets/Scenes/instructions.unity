@@ -444,10 +444,10 @@ GUIText:
   m_Text: "This game requires two monitors.\r\n\r\nMaximize the window and expand
     it into the second monitor.\r\n\r\rThen, turn the second monitor to face opposite
     of the first\n\nThe player on the \"left\" is the \"human\"\r\nThe player on the
-    \"right\" is \"god\"\r\n\r\nThe \"human\" CANNOT see \"god's\" screen!\r\n\"god\"
-    is not allowed to speak!\r\nHowever, they are allowed to mime, charade, etc.\n\nThe
-    \"god\" screen is mirrored to help you charade,\nIf this disorients you for some
-    reason,\nPress M to toggle mirroring"
+    \"right\" is \"god\"\r\n\r\nThe \"human\" CANNOT see \"god's\" screen!\r\nTHE
+    PLAYERS ARE NOT ALLOWED TO TALK TO EACH OTHER!\nHowever, they are allowed to mime,
+    charade, etc.\n\nThe \"god\" screen is mirrored to help you charade,\nIf this
+    disorients you for some reason,\nPress M to toggle mirroring"
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
