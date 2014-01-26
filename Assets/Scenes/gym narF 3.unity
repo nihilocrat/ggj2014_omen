@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numericInput: 0
   possiblePasswords:
-  - canyon
+  - mouse
   - table
   - glass
 --- !u!65 &1076825130
@@ -1708,7 +1708,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: possiblePasswords.Array.data[0]
-      value: canyon
+      value: mouse
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: possiblePasswords.Array.data[1]
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   possiblePasswords:
   - speaker
   - headphones
-  - mouse
+  - canyon
 --- !u!65 &1374993661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4245,7 +4245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: possiblePasswords.Array.data[2]
-      value: mouse
+      value: canyon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
