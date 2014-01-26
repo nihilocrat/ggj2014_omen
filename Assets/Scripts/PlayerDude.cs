@@ -156,8 +156,8 @@ public class PlayerDude : MonoBehaviour
 
 		iTween.MoveAdd(gameObject, Vector3.up * exitRiseAmount, exitRiseTime);
 
-		fx.SendMessage("OnLevelEndFX", 2f);
-		yield return new WaitForSeconds(2f);
+		fx.SendMessage("OnLevelEndFX", exitRiseTime);
+		yield return new WaitForSeconds(exitRiseTime);
 
 		if(string.IsNullOrEmpty(nextLevelName))
 		{
