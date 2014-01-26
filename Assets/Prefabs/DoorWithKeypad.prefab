@@ -343,7 +343,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
+  m_Font: {fileID: 12800000, guid: 2987397ca6b1c844783e4468e305f0ad, type: 2}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -364,7 +364,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
+  m_Font: {fileID: 12800000, guid: 2987397ca6b1c844783e4468e305f0ad, type: 2}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295

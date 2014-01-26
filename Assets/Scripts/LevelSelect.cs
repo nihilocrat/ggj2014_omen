@@ -27,8 +27,8 @@ public class LevelSelect : MonoBehaviour
 
 	void OnGUI ()
 	{
-		DrawSelect(new Vector2(100f, 100f));
-		DrawSelect(new Vector2(Screen.width - 500f, 100f));
+		DrawSelect(new Vector2(50f, 100f));
+		DrawSelect(new Vector2(Screen.width - 550f, 100f));
 	}
 
 	void DrawSelect(Vector2 origin)
