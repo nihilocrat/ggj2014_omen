@@ -331,6 +331,78 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2110251664}
   m_GameObject: {fileID: 237171191}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &242318513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 96bf93cc4081e8e49ae9758f41b6c037, type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 242318514}
+  - 23: {fileID: 242318516}
+  - 102: {fileID: 242318515}
+  m_Layer: 9
+  m_Name: Instructions_god
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &242318514
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 96bf93cc4081e8e49ae9758f41b6c037, type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 242318513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.39999998, y: .800000012, z: 1}
+  m_LocalScale: {x: .0299999993, y: .0299999993, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444437908}
+--- !u!102 &242318515
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10200002, guid: 96bf93cc4081e8e49ae9758f41b6c037,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 242318513}
+  m_Text: Help the other player avoid danger!
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &242318516
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300010, guid: 96bf93cc4081e8e49ae9758f41b6c037,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 242318513}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &325348458
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +613,7 @@ GameObject:
   - 114: {fileID: 444437904}
   - 82: {fileID: 444437909}
   - 114: {fileID: 444437910}
+  - 114: {fileID: 444437911}
   m_Layer: 9
   m_Name: GUI Camera
   m_TagString: Untagged
@@ -623,8 +696,9 @@ Transform:
   - {fileID: 1837038718}
   - {fileID: 1629848900}
   - {fileID: 237171192}
-  - {fileID: 458867573}
+  - {fileID: 242318514}
   - {fileID: 1951008109}
+  - {fileID: 458867573}
   m_Father: {fileID: 0}
 --- !u!82 &444437909
 AudioSource:
@@ -698,10 +772,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMaterial: {fileID: 2100000, guid: fb008a2d3bf16e142a2d149731a5337c, type: 2}
-  beginColor: {r: 1, g: 0, b: 0, a: 1}
-  endColor: {r: 0, g: 0, b: 1, a: 1}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
   colorPropertyName: _Emission
   time: 5
+--- !u!114 &444437911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 96bf93cc4081e8e49ae9758f41b6c037,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110251664}
+  m_GameObject: {fileID: 444437903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096e4bbfdff634a488000ba60c8c0360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  timerText: {fileID: 458867574}
 --- !u!1 &458867572
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +803,7 @@ GameObject:
   - 23: {fileID: 458867575}
   - 102: {fileID: 458867574}
   m_Layer: 9
-  m_Name: Instructions_god
+  m_Name: timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +816,7 @@ Transform:
   m_PrefabInternal: {fileID: 2110251664}
   m_GameObject: {fileID: 458867572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.39999998, y: .800000012, z: 1}
+  m_LocalPosition: {x: 1.39999998, y: -.800000012, z: 1}
   m_LocalScale: {x: .0299999993, y: .0299999993, z: 1}
   m_Children: []
   m_Father: {fileID: 444437908}
@@ -738,17 +828,17 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 2110251664}
   m_GameObject: {fileID: 458867572}
-  m_Text: Help the other player avoid danger!
+  m_Text: 00:00
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 2
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
+  m_Font: {fileID: 12800000, guid: 85b5f712cc5d604458948582de6ae146, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -765,7 +855,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
+  - {fileID: 2100000, guid: 85b5f712cc5d604458948582de6ae146, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1331,6 +1421,10 @@ Prefab:
     - target: {fileID: 400000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
       propertyPath: m_LocalScale.y
       value: 13.7657585
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
+      propertyPath: nextLevelName
+      value: level4 narF prototype (corridor level)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
@@ -2427,6 +2521,7 @@ GameObject:
   - 114: {fileID: 1453661070}
   - 54: {fileID: 1453661071}
   - 82: {fileID: 1453661072}
+  - 114: {fileID: 1453661073}
   m_Layer: 0
   m_Name: HumanPlayer
   m_TagString: Player
@@ -2572,6 +2667,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3009451617b7aca4685196c439513df5, type: 3}
   - {fileID: 8300000, guid: 536bfff5cb27ed940b4fcb3adf772e24, type: 3}
   - {fileID: 8300000, guid: 76e073c7e6ed1fe4ba5327ebc9f69613, type: 3}
+  dead: 0
 --- !u!54 &1453661071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2647,6 +2743,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1453661073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: 59b507d5fda92c84cb1f4d2b97949484,
+    type: 2}
+  m_PrefabInternal: {fileID: 1141125989}
+  m_GameObject: {fileID: 1453661064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee266d44d1330cb4fa5ded24ff66030f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: .5
+  velocityThreshhold: 1
+  footstepSound: {fileID: 8300000, guid: def3428d4a904ca4daa26a48e269af15, type: 3}
 --- !u!1001 &1463099121
 Prefab:
   m_ObjectHideFlags: 0
@@ -3086,7 +3197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d260c9d065dfb44aa92bb76b34744be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: 
+  nextLevelName: level4 narF prototype (corridor level)
 --- !u!1 &1600462229
 GameObject:
   m_ObjectHideFlags: 0
