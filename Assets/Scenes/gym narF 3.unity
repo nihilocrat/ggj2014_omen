@@ -1381,9 +1381,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numericInput: 0
   possiblePasswords:
-  - cat
-  - dog
-  - bird
+  - canyon
+  - table
+  - glass
 --- !u!65 &1076825130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1705,6 +1705,18 @@ Prefab:
     - target: {fileID: 400000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.55355763
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[0]
+      value: canyon
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[1]
+      value: table
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[2]
+      value: glass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
@@ -2149,11 +2161,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1141125989}
   m_GameObject: {fileID: 1374938372}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed0179d562f2854eae16b19e4baee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doMirror: 1
 --- !u!124 &1374938374
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2269,9 +2282,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numericInput: 0
   possiblePasswords:
-  - cat
-  - dog
-  - bird
+  - speaker
+  - headphone
+  - mouse
 --- !u!65 &1374993661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2471,7 +2484,7 @@ MonoBehaviour:
     gravity: 20
     maxFallSpeed: 20
   jumping:
-    enabled: 1
+    enabled: 0
     baseHeight: 1
     extraHeight: 1
     perpAmount: 0
@@ -4221,6 +4234,18 @@ Prefab:
     - target: {fileID: 400000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.55355752
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[0]
+      value: speaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[1]
+      value: headphone
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[2]
+      value: mouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
