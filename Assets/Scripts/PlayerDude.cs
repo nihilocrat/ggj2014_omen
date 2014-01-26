@@ -152,6 +152,8 @@ public class PlayerDude : MonoBehaviour
 		OnDisable();
 		dead = true; // technically not dead, but this prevents a lot of stuff bad stuff from happening
 
+		iTween.MoveAdd(gameObject, Vector3.up * 10f, 3f);
+
 		fx.SendMessage("OnLevelEndFX", 2f);
 		yield return new WaitForSeconds(2f);
 
