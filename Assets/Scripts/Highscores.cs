@@ -19,23 +19,44 @@ public class Highscores : MonoBehaviour
 
 	void Load()
 	{
-		var json = PlayerPrefs.GetString("Highscores", "");
-		
-		if(!string.IsNullOrEmpty(json))
+		scores = new Dictionary<int, List<int>>();
+
+		for(int i=0; i < 10; i++)
 		{
-			scores = LitJson.JsonMapper.ToObject<Dictionary<int, List<int>>>(json);
+			var keyname = "Highscores_" + i.ToString();
+			string json = PlayerPrefs.GetString(keyname, "");
+			if(!string.IsNullOrEmpty(json))
+			{
+				scores[i] = new List<int>();
+				scores[i] = LitJson.JsonMapper.ToObject<List<int>>(json);
+				Debug.Log("LOADED: " + keyname + " : " + json);
+			}
 		}
 	}
 
 	void Save()
 	{
+		/*
 		string json = LitJson.JsonMapper.ToJson(scores);
 		PlayerPrefs.SetString("Highscores", json);
+		*/
+		foreach(KeyValuePair<int, List<int>> pair in scores)
+		{
+			var json = LitJson.JsonMapper.ToJson(pair.Value);
+			var keyname = "Highscores_" + pair.Key.ToString();
+			PlayerPrefs.SetString(keyname, json);
+			Debug.Log("SAVED: " + keyname + " : " + json);
+		}
 	}
 
-	void RecordScore(int levelNumber, float score)
+	public void RecordScore(int levelNumber, float score)
 	{
 		int scoreInt = Mathf.FloorToInt(score);
+		
+		if(!scores.ContainsKey(levelNumber))
+		{
+			scores[levelNumber] = new List<int>();
+		}
 
 		var levelScores = scores[levelNumber];
 		levelScores.Add(scoreInt);
@@ -51,10 +72,14 @@ public class Highscores : MonoBehaviour
 
 	public string GetScoresForLevel(int levelNumber)
 	{
+		var text = "Best:\n\n";
+
+		if(!scores.ContainsKey(levelNumber))
+		{
+			return text;
+		}
+
 		var levelScores = scores[levelNumber];
-
-		var text = "Highscores:\n";
-
 		for(int i = 0; i < 3; i++)
 		{
 			if(i < levelScores.Count)

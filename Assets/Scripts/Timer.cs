@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 	public PlayerDude player;
 	public TextMesh timerText;
 
-	private float time = 0f;
+	public float time = 0f;
 	private float levelBeginTime = 0f;
 
 	// Use this for initialization

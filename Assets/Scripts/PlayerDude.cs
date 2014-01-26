@@ -151,6 +151,10 @@ public class PlayerDude : MonoBehaviour
 
 		Debug.Log("Player won! Next level: " + nextLevelName);
 
+		var highscores = FindObjectOfType<Highscores>();
+		var timer = FindObjectOfType<Timer>();
+		highscores.RecordScore(Application.loadedLevel, timer.time);
+
 		OnDisable();
 		dead = true; // technically not dead, but this prevents a lot of stuff bad stuff from happening
 
