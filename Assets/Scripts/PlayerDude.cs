@@ -39,6 +39,12 @@ public class PlayerDude : MonoBehaviour
 		}
 
 		// send me to the spawnpoint
+		Respawn();
+	}
+
+	void Respawn()
+	{
+		dead = false;
 		transform.position = lastCheckPoint.position;
 		transform.rotation = lastCheckPoint.rotation;
 	}
@@ -119,7 +125,12 @@ public class PlayerDude : MonoBehaviour
 		fx.SendMessage("OnPlayerDeathFX", 1f);
 		yield return new WaitForSeconds(1f);
 
-		Application.LoadLevel(Application.loadedLevel);
+		//Application.LoadLevel(Application.loadedLevel);
+		Respawn();
+		OnEnable();
+
+		fx.SendMessage("OnPlayerRespawnFX", 1f);
+		yield return new WaitForSeconds(1f);
 	}
 
 	IEnumerator OnPlayerWin(string nextLevelName)

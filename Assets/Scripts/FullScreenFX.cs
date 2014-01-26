@@ -12,6 +12,11 @@ public class FullScreenFX : MonoBehaviour
 		StartCoroutine( doFadeIn(death, time) );
 	}
 	
+	void OnPlayerRespawnFX(float time)
+	{
+		StartCoroutine( doFadeOut(death, time) );
+	}
+
 	void OnGameBeginFX(float time)
 	{
 		StartCoroutine( doFadeOut(transition, time) );
