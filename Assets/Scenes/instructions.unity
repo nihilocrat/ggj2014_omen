@@ -717,7 +717,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485631505}
-  m_Text: 'HUMAN: Don''t die!'
+  m_Text: 'EXPLORER: Don''t die!'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -939,13 +939,12 @@ GUIText:
   m_GameObject: {fileID: 827025673}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: "This game requires two monitors.\r\n\r\nMaximize the window and expand
+  m_Text: "irroringe requires two monitors.\r\n\r\nMaximize the window and expand
     it into the second monitor.\r\n\r\rThen, turn the second monitor to face opposite
     of the first\n\nThe player on the \"left\" is the \"explorer\"\r\nThe player on
-    the \"right\" is \"mime\"\r\n\r\nThe \"human\" CANNOT see \"god's\" screen!\r\nTHE
-    PLAYERS ARE NOT ALLOWED TO TALK TO EACH OTHER!\nHowever, they are allowed to mime,
-    charade, etc.\n\nThe \"god\" screen is mirrored to help you charade,\nIf this
-    disorients you for some reason,\nPress M to toggle mirroring"
+    the \"right\" is \"mime\"\r\n\r\nRULES:\nNO looking at the other screen!\nNO talking!\n\nThe
+    \"mime\" screen is mirrored to help you charade,\nIf this disorients you, press
+    M to toggle mirroring"
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -1467,7 +1466,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1920687091}
-  m_Text: 'GOD: Help the human avoid danger!'
+  m_Text: 'MIME: Help the explorer avoid danger!'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
