@@ -2710,6 +2710,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 13.7657585
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
+      propertyPath: nextLevelName
+      value: gym narF 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
   m_RootGameObject: {fileID: 1526421466}
@@ -4474,7 +4478,7 @@ GameObject:
   m_Layer: 0
   m_Name: ExitZone
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1319202362, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4545,7 +4549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d260c9d065dfb44aa92bb76b34744be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: 
+  nextLevelName: gym narF 3
 --- !u!1 &1556915558
 GameObject:
   m_ObjectHideFlags: 0
