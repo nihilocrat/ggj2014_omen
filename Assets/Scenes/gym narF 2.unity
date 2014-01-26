@@ -690,9 +690,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numericInput: 0
   possiblePasswords:
-  - cat
-  - dog
-  - bird
+  - angel
+  - fast
+  - chuck norris
 --- !u!65 &214684993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1228,6 +1228,18 @@ Prefab:
     - target: {fileID: 400000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.55355763
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[0]
+      value: angel
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[1]
+      value: fast
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[2]
+      value: chuck norris
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
@@ -2215,9 +2227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numericInput: 0
   possiblePasswords:
-  - cat
-  - dog
-  - bird
+  - iphone
+  - rocket
+  - sky
 --- !u!65 &640028243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2876,6 +2888,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.55355763
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[0]
+      value: iphone
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[1]
+      value: rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[2]
+      value: sky
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
   m_RootGameObject: {fileID: 444697889}
@@ -3120,9 +3144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numericInput: 0
   possiblePasswords:
-  - cat
-  - dog
-  - bird
+  - door
+  - cookie
+  - bag
 --- !u!65 &1076825130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3445,6 +3469,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.55355763
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[0]
+      value: door
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[1]
+      value: cookie
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
+      propertyPath: possiblePasswords.Array.data[2]
+      value: bag
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
   m_RootGameObject: {fileID: 1244613401}
@@ -3681,11 +3717,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1141125989}
   m_GameObject: {fileID: 1374938372}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed0179d562f2854eae16b19e4baee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doMirror: 1
 --- !u!124 &1374938374
 Behaviour:
   m_ObjectHideFlags: 0
@@ -4090,7 +4127,7 @@ MonoBehaviour:
     gravity: 20
     maxFallSpeed: 20
   jumping:
-    enabled: 1
+    enabled: 0
     baseHeight: 1
     extraHeight: 1
     perpAmount: 0
