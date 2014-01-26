@@ -1,62 +1,13 @@
 fileFormatVersion: 2
-guid: 98ac1eb94ec854be8aec7d38cc0a156c
+guid: 35307fc5a94f04f2b85bee105f172d14
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane001
-    100004: Plane004
-    100006: Plane005
-    100008: Canyon
-    100010: Ground
-    100012: Cone001
-    100014: Box001
-    100016: Cone002
-    100018: Building
-    100020: Building001
     400000: //RootNode
-    400002: Plane001
-    400004: Plane004
-    400006: Plane005
-    400008: Canyon
-    400010: Ground
-    400012: Cone001
-    400014: Box001
-    400016: Cone002
-    400018: Building
-    400020: Building001
     2300000: //RootNode
-    2300002: Plane001
-    2300004: Plane004
-    2300006: Plane005
-    2300008: Canyon
-    2300010: Ground
-    2300012: Cone001
-    2300014: Box001
-    2300016: Cone002
-    2300018: Building
-    2300020: Building001
     3300000: //RootNode
-    3300002: Plane001
-    3300004: Plane004
-    3300006: Plane005
-    3300008: Canyon
-    3300010: Ground
-    3300012: Cone001
-    3300014: Box001
-    3300016: Cone002
-    3300018: Building
-    3300020: Building001
-    4300000: Plane001
-    4300002: Plane004
-    4300004: Plane005
-    4300006: Ground
-    4300008: Canyon
-    4300010: Cone001
-    4300012: Box001
-    4300014: Cone002
-    4300016: Building
-    4300018: Building001
+    4300000: Building001
     9500000: //RootNode
   materials:
     importMaterials: 1
