@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
 			animation.Play();
 		}
 
-		Destroy(gameObject, animation.clip.length);
+		Destroy(this, animation.clip.length);
+		Destroy(transform.Find("Hinge").gameObject, animation.clip.length);
+
 	}
 }
