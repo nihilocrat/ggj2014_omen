@@ -123,7 +123,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .206422254, g: .185553625, b: .242647052, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -167,6 +167,7 @@ GameObject:
   - 124: {fileID: 69849459}
   - 114: {fileID: 69849458}
   - 82: {fileID: 69849462}
+  - 114: {fileID: 69849463}
   m_Layer: 9
   m_Name: GUI Camera
   m_TagString: Untagged
@@ -309,6 +310,22 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &69849463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 69849456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa033dfa7f8aa7469721097816264d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMaterial: {fileID: 2100000, guid: fb008a2d3bf16e142a2d149731a5337c, type: 2}
+  beginColor: {r: 1, g: 0, b: 0, a: 1}
+  endColor: {r: 0, g: 0, b: 1, a: 1}
+  colorPropertyName: _Emission
+  time: 5
 --- !u!1 &424665265
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,9 +414,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 24
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -453,9 +470,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 24
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -619,7 +636,7 @@ Transform:
   m_GameObject: {fileID: 1920687091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.39999998, y: .600000024, z: 1}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalScale: {x: .0299999993, y: .0299999993, z: 1}
   m_Children: []
   m_Father: {fileID: 69849457}
 --- !u!102 &1920687093
@@ -640,7 +657,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -657,7 +674,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
