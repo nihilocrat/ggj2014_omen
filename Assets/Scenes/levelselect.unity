@@ -488,8 +488,8 @@ MonoBehaviour:
   - Construction
   - Garden
   - Canyon
-  - Proto 1
-  - Proto 2
+  - Corridors
+  - Danger zone
 --- !u!1 &2009985438
 GameObject:
   m_ObjectHideFlags: 0
