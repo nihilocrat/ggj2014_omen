@@ -56,6 +56,12 @@ public class PlayerDude : MonoBehaviour
 			Application.Quit();
 		}
 
+		if(Input.GetButtonDown("ToggleMirroring"))
+		{
+			var mirror = FindObjectOfType<MirrorCamera>();
+			mirror.doMirror = !mirror.doMirror;
+		}
+
 		if(Input.GetButtonDown("Action"))
 		{
 			// if I have grabbed something, drop it.
