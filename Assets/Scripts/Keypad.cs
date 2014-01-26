@@ -162,6 +162,9 @@ public class Keypad : MonoBehaviour
 
 	void ValidateCode()
 	{
+		currentCode = currentCode.TrimStart(' ');
+		currentCode = currentCode.TrimEnd(' ', '\r', '\n');
+
 		if(currentCode == targetCode)
 		{
 			// success!

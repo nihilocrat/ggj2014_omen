@@ -941,8 +941,8 @@ GUIText:
   serializedVersion: 3
   m_Text: "This game requires two monitors.\r\n\r\nMaximize the window and expand
     it into the second monitor.\r\n\r\rThen, turn the second monitor to face opposite
-    of the first\n\nThe player on the \"left\" is the \"human\"\r\nThe player on the
-    \"right\" is \"god\"\r\n\r\nThe \"human\" CANNOT see \"god's\" screen!\r\nTHE
+    of the first\n\nThe player on the \"left\" is the \"explorer\"\r\nThe player on
+    the \"right\" is \"mime\"\r\n\r\nThe \"human\" CANNOT see \"god's\" screen!\r\nTHE
     PLAYERS ARE NOT ALLOWED TO TALK TO EACH OTHER!\nHowever, they are allowed to mime,
     charade, etc.\n\nThe \"god\" screen is mirrored to help you charade,\nIf this
     disorients you for some reason,\nPress M to toggle mirroring"
@@ -1291,7 +1291,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732839838}
-  m_Text: HUMAN
+  m_Text: EXPLORER
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1578,7 +1578,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024758459}
-  m_Text: GOD
+  m_Text: MIME
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

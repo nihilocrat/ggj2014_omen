@@ -413,7 +413,7 @@ GUIText:
   m_GameObject: {fileID: 1023782110}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: MIME-O-VISION
+  m_Text: OMEN
   m_Anchor: 4
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -421,7 +421,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 747a4bf293cdbd042a63a8727e8c9140, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 88
+  m_FontSize: 128
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
