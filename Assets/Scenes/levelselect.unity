@@ -484,8 +484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1885a0266a04cf44a87b4cc1daf9d743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLevelIndex: 3
-  numLevels: 5
+  levelNames:
+  - Construction
+  - Garden
+  - Canyon
+  - Proto 1
+  - Proto 2
 --- !u!1 &2009985438
 GameObject:
   m_ObjectHideFlags: 0

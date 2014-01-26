@@ -3,8 +3,7 @@ using System.Collections;
 
 public class LevelSelect : MonoBehaviour
 {
-	public int startingLevelIndex = 3;
-	public int numLevels = 5;
+	public string[] levelNames;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +18,7 @@ public class LevelSelect : MonoBehaviour
 
 	void DrawSelect(Vector2 origin)
 	{
+		int numLevels = levelNames.Length;
 		Vector2 size = new Vector2(400f, 500f);
 		Vector2 buttonsize = new Vector2(100f, 100f);
 		float textHeight = 24f;
@@ -29,8 +29,9 @@ public class LevelSelect : MonoBehaviour
 			int num = i + 1;
 			int col = i % 3;
 			int row = Mathf.FloorToInt(i / 3);
+			string levelName = levelNames[i];
 
-			if(GUI.Button(new Rect(origin.x + col * 100f, origin.y + row * 100f, buttonsize.x, buttonsize.y), num.ToString()))
+			if(GUI.Button(new Rect(origin.x + col * 100f, origin.y + row * 100f, buttonsize.x, buttonsize.y), levelName))
 			{
 				InputNumber(num);
 			}
