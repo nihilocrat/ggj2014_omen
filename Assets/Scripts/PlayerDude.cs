@@ -126,6 +126,7 @@ public class PlayerDude : MonoBehaviour
 			tilt *= -1f;
 		}
 
+		iTween.MoveAdd(gameObject, -Vector3.up * 0.5f, 1f);
 		iTween.RotateAdd(gameObject, new Vector3(0f, 0f, 100f * tilt), 1f);
 
 		fx.SendMessage("OnPlayerDeathFX", 1f);
