@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerDude : MonoBehaviour
 {
+	public float exitRiseAmount = 10f;
+	public float exitRiseTime = 3f;
 	public GameObject grabTriggerPrefab;
 	public Transform lastCheckPoint;
 	public Transform grabLocation;
@@ -152,7 +154,7 @@ public class PlayerDude : MonoBehaviour
 		OnDisable();
 		dead = true; // technically not dead, but this prevents a lot of stuff bad stuff from happening
 
-		iTween.MoveAdd(gameObject, Vector3.up * 10f, 3f);
+		iTween.MoveAdd(gameObject, Vector3.up * exitRiseAmount, exitRiseTime);
 
 		fx.SendMessage("OnLevelEndFX", 2f);
 		yield return new WaitForSeconds(2f);

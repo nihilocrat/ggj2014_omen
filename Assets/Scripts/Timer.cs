@@ -25,9 +25,14 @@ public class Timer : MonoBehaviour
 			time = Time.time;
 		}
 
-		int min = Mathf.FloorToInt(time / 60f);
-		int sec = Mathf.FloorToInt(time - min * 60f);
+		timerText.text = TimeToString(time);
+	}
 
-		timerText.text = string.Format("{0}:{1}", min, sec.ToString("00"));
+	static public string TimeToString(float inputTime)
+	{
+		int min = Mathf.FloorToInt(inputTime / 60f);
+		int sec = Mathf.FloorToInt(inputTime - min * 60f);
+		
+		return string.Format("{0}:{1}", min, sec.ToString("00"));
 	}
 }
