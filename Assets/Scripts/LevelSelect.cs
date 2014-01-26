@@ -6,6 +6,8 @@ public class LevelSelect : MonoBehaviour
 	public string[] levelNames;
 	private FullScreenFX fx;
 	private Highscores highscores;
+	
+	public static int firstLevelIndex = 3;
 
 	// Use this for initialization
 	void Start ()
@@ -52,7 +54,8 @@ public class LevelSelect : MonoBehaviour
 				InputNumber(num);
 			}
 
-			GUI.Label(new Rect(origin.x + col * 100f, origin.y + 150f, buttonsize.x, buttonsize.y), highscores.GetScoresForLevel(num));
+			string scores = highscores.GetScoresForLevel(firstLevelIndex + i);
+			GUI.Label(new Rect(origin.x + col * 100f, origin.y + 150f, buttonsize.x, buttonsize.y), scores);
 		}
 	}
 
