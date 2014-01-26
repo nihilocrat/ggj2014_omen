@@ -36,12 +36,33 @@ public class Highscores : MonoBehaviour
 	void RecordScore(int levelNumber, float score)
 	{
 		int scoreInt = Mathf.FloorToInt(score);
-		/*
-		var levelScores = scores[levelNumber];
-		foreach()
-		{
 
+		var levelScores = scores[levelNumber];
+		levelScores.Add(scoreInt);
+		levelScores.Sort();
+
+		if(levelScores.Count > maxScoresPerLevel)
+		{
+			levelScores.RemoveAt(levelScores.Count-1);
 		}
-		*/
+
+		Save();
+	}
+
+	public string GetScoresForLevel(int levelNumber)
+	{
+		var levelScores = scores[levelNumber];
+
+		var text = "Highscores:\n";
+
+		for(int i = 0; i < 3; i++)
+		{
+			if(i < levelScores.Count)
+			{
+				text += Timer.TimeToString(levelScores[i]) + "\n";
+			}
+      	}
+
+		return text;
 	}
 }

@@ -5,10 +5,12 @@ public class LevelSelect : MonoBehaviour
 {
 	public string[] levelNames;
 	private FullScreenFX fx;
+	private Highscores highscores;
 
 	// Use this for initialization
 	void Start ()
 	{
+		highscores = GetComponent<Highscores>();
 		fx = GameObject.FindObjectOfType<FullScreenFX>();
 		fx.SendMessage("OnTitleBeginFX", 1f);
 	}
@@ -34,18 +36,23 @@ public class LevelSelect : MonoBehaviour
 		Vector2 buttonsize = new Vector2(100f, 100f);
 		float textHeight = 24f;
 		//GUI.Box(new Rect(origin.x - 50f, origin.y - 50f, size.x, size.y), "");//, style);
-		
+
+		int buttonsPerRow = 5;
+
 		for(int i=0; i < numLevels; i++)
 		{
 			int num = i + 1;
-			int col = i % 3;
-			int row = Mathf.FloorToInt(i / 3);
+			int col = i % buttonsPerRow;
+			int row = Mathf.FloorToInt(i / buttonsPerRow);
 			string levelName = levelNames[i];
 
+			//if(GUI.Button(new Rect(origin.x + col * 100f, origin.y + row * 100f, buttonsize.x, buttonsize.y), levelName))
 			if(GUI.Button(new Rect(origin.x + col * 100f, origin.y + row * 100f, buttonsize.x, buttonsize.y), levelName))
 			{
 				InputNumber(num);
 			}
+
+			GUI.Label(new Rect(origin.x + col * 100f, origin.y + 150f, buttonsize.x, buttonsize.y), highscores.GetScoresForLevel(num));
 		}
 	}
 
