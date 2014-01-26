@@ -2283,7 +2283,7 @@ MonoBehaviour:
   numericInput: 0
   possiblePasswords:
   - speaker
-  - headphone
+  - headphones
   - mouse
 --- !u!65 &1374993661
 BoxCollider:
@@ -4241,7 +4241,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: possiblePasswords.Array.data[1]
-      value: headphone
+      value: headphones
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2a89d21d00e3cd248b07f81de95d3d46, type: 2}
       propertyPath: possiblePasswords.Array.data[2]
