@@ -1747,8 +1747,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMaterial: {fileID: 2100000, guid: fb008a2d3bf16e142a2d149731a5337c, type: 2}
-  beginColor: {r: 1, g: 0, b: 0, a: 1}
-  endColor: {r: 0, g: 0, b: 1, a: 1}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
   colorPropertyName: _Emission
   time: 5
 --- !u!1 &453610507
@@ -3235,6 +3237,10 @@ Prefab:
     - target: {fileID: 400000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
       propertyPath: m_LocalScale.y
       value: 13.7657585
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
+      propertyPath: nextLevelName
+      value: gym narF 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d34cdc72c3fb109468e58497b4123b4e, type: 2}
@@ -6155,7 +6161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d260c9d065dfb44aa92bb76b34744be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: 
+  nextLevelName: gym narF 2
 --- !u!1001 &1543761158
 Prefab:
   m_ObjectHideFlags: 0
