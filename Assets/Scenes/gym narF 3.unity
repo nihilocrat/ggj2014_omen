@@ -928,7 +928,7 @@ GameObject:
   - 33: {fileID: 783068088}
   - 65: {fileID: 783068087}
   - 23: {fileID: 783068086}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Cube invisible floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3613,7 +3613,7 @@ GameObject:
   - 33: {fileID: 1668595532}
   - 65: {fileID: 1668595531}
   - 23: {fileID: 1668595530}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Cube invisible floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4332,7 +4332,7 @@ GameObject:
   - 33: {fileID: 2085613791}
   - 65: {fileID: 2085613790}
   - 23: {fileID: 2085613789}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube invisible floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4386,8 +4386,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2085613788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.59700298, y: -1.96568871, z: 30.1092396}
-  m_LocalScale: {x: 17.6440716, y: .492197067, z: 1.5954963}
+  m_LocalPosition: {x: 6.82873631, y: -1.96568871, z: 30.1092396}
+  m_LocalScale: {x: 15.2242813, y: .492197067, z: 1.5954963}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &2087309203
@@ -4497,7 +4497,7 @@ GameObject:
   - 33: {fileID: 2105932889}
   - 65: {fileID: 2105932888}
   - 23: {fileID: 2105932887}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Cube invisible floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
