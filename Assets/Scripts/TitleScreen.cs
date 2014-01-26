@@ -19,6 +19,11 @@ public class TitleScreen : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+
 		if(Time.time > startTime + startDelay && Input.GetButtonDown("Action"))
 		{
 			StartCoroutine( doNextLevel() );

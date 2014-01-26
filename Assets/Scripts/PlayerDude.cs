@@ -55,7 +55,7 @@ public class PlayerDude : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			Application.Quit();
+			Application.LoadLevel("levelselect");
 		}
 
 		if(Input.GetButtonDown("ToggleMirroring"))

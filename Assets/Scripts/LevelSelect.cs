@@ -4,12 +4,23 @@ using System.Collections;
 public class LevelSelect : MonoBehaviour
 {
 	public string[] levelNames;
+	private FullScreenFX fx;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+		fx = GameObject.FindObjectOfType<FullScreenFX>();
+		fx.SendMessage("OnTitleBeginFX", 1f);
 	}
-	
+
+	void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+	}
+
 	void OnGUI ()
 	{
 		DrawSelect(new Vector2(100f, 100f));
@@ -40,6 +51,14 @@ public class LevelSelect : MonoBehaviour
 
 	void InputNumber(int num)
 	{
-		Application.LoadLevel(Application.loadedLevel + num);
+		StartCoroutine( doLoadLevel(Application.loadedLevel + num) );
+	}
+
+	IEnumerator doLoadLevel(int levelNum)
+	{
+		fx.SendMessage("OnTitleEndFX", 1f);
+		yield return new WaitForSeconds(1f);
+		
+		Application.LoadLevel(levelNum);
 	}
 }

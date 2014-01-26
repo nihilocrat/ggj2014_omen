@@ -44,6 +44,8 @@ public class FullScreenFX : MonoBehaviour
 
 	IEnumerator doFadeIn(Transform fx, float time)
 	{
+		//iTween.Stop(fx.gameObject);
+
 		Color originalColor = fx.renderer.sharedMaterial.color;
 		Color startColor = originalColor;
 		startColor.a = 0f;
@@ -60,6 +62,8 @@ public class FullScreenFX : MonoBehaviour
 
 	IEnumerator doFadeOut(Transform fx, float time)
 	{
+		//iTween.Stop(fx.gameObject);
+
 		Color originalColor = fx.renderer.sharedMaterial.color;
 		Color startColor = originalColor;
 		startColor.a = 1f;
