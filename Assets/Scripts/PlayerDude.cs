@@ -62,6 +62,13 @@ public class PlayerDude : MonoBehaviour
 		{
 			var mirror = FindObjectOfType<MirrorCamera>();
 			mirror.doMirror = !mirror.doMirror;
+
+			// inform all 3D text in the scene
+			// yeah it's inefficient, but it doesn't really matter, does it?
+			foreach(MirrorObject text in GameObject.FindObjectsOfType<MirrorObject>())
+			{
+				text.OnToggleMirroring(mirror.doMirror);
+			}
 		}
 
 		if(Input.GetButtonDown("Action"))
