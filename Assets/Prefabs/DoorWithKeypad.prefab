@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe12bece942d394ea3fcb6de17e0d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skin: {fileID: 11400000, guid: 8ed7c00dcfa3b934ebf40151af97b0df, type: 2}
   numericInput: 0
   possiblePasswords:
   - cat
