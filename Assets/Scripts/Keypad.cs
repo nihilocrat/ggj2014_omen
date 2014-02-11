@@ -117,7 +117,7 @@ public class Keypad : MonoBehaviour
 					ValidateCode();
 				}
 				
-				if(GUI.Button(new Rect(origin.x + buttonsize.x, origin.y + textHeight * 3f, buttonsize.x, buttonsize.y), "X"))
+				if(GUI.Button(new Rect(origin.x + buttonsize.x, origin.y + textHeight * 3f, buttonsize.x, buttonsize.y), "QUIT"))
 				{
 					currentCode = "";
 					CloseKeypad();

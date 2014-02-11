@@ -16,7 +16,7 @@ public class PlayerDude : MonoBehaviour
 	private CharacterController controller;
 
 	private string firstLevelName = "level1";
-	private float deathAltitude = -10f;
+	private float deathAltitude = -20f;
 
 	void Awake()
 	{
