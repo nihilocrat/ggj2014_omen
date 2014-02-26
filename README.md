@@ -6,6 +6,15 @@ GGJ 2014 game!
 By nihilocrat, Geoffrey Cooper, Francis Sheridan Paré
 
 
+== Setup ==
+Stretch the window so that it spread on both monitor. Each player should only see his own half of the game.
+
+Player 1 (the walker) should see the left side and have the keyboard and mouse.
+
+Player 2 (the mime) should see the right side. The mime has no controls, but he'll get to see the traps and invisible walls.
+
+The mime helps the walker to navigate to the exit (the tall pink tube) but remember: no talking allowed! :)
+
 
 
 == Mac users troubleshoot ==
